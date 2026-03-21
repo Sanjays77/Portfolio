@@ -1,62 +1,57 @@
 @import "tailwindcss";
 
 @theme {
-  --animate-blob: blob 7s infinite;
-  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+  --color-background-navy: #0b0c10;
+  --color-text-primary: #ccd6f6;
+  --color-text-secondary: #8892b0;
+  --color-neon-teal: #64ffda;
   
-  --keyframes-blob: {
-    0% { transform: translate(0px, 0px) scale(1); }
-    33% { transform: translate(30px, -50px) scale(1.1); }
-    66% { transform: translate(-20px, 20px) scale(0.9); }
-    100% { transform: translate(0px, 0px) scale(1); }
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-blink: blink 1s step-end infinite;
+  
+  --keyframes-float: {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
   };
 
-  --keyframes-fadeInUp: {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+  --keyframes-blink: {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
   };
 }
 
-.animation-delay-2000 { animation-delay: 2s; }
-.animation-delay-3000 { animation-delay: 3s; }
-.animation-delay-4000 { animation-delay: 4s; }
-.animation-delay-300 { animation-delay: 0.3s; }
-.animation-delay-500 { animation-delay: 0.5s; }
-.animation-delay-700 { animation-delay: 0.7s; }
-
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-background-navy);
+  color: var(--color-text-primary);
+  color-scheme: dark;
 }
 
 body {
   overflow-x: hidden;
+  background-color: var(--color-background-navy);
+  color: var(--color-text-primary);
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-  @media (prefers-color-scheme: dark) {
-    background: #111827;
-  }
+  background: var(--color-background-navy);
 }
 ::-webkit-scrollbar-thumb {
-  background: #c7d2fe; 
-  border-radius: 5px;
-  @media (prefers-color-scheme: dark) {
-    background: #4f46e5;
-  }
+  background: #233554;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #818cf8; 
-  @media (prefers-color-scheme: dark) {
-    background: #6366f1;
-  }
+  background: #495670; 
 }
 
-.glass-container {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+.glass-nav {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(11, 12, 16, 0.85);
+  box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7);
 }
