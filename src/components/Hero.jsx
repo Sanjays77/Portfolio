@@ -84,7 +84,7 @@ const Hero = () => {
           </div>
 
           <p className="font-mono text-[#64ffda] text-lg mb-2">
-            Hi, my name is
+            Hi, I am
           </p>
           <h1 className="text-5xl md:text-7xl font-bold text-[#ccd6f6] tracking-tight">
             S Sanjay
