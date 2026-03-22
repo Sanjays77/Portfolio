@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Certifications from './components/Certifications';
 import Education from './components/Education';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Experience />
       <Certifications />
       <Education />
+      <Contact />
       
       <footer className="py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 mt-12">
         <p>© {new Date().getFullYear()} S Sanjay. All rights reserved.</p>
