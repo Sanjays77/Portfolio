@@ -12,53 +12,53 @@ const Projects = () => {
   const projects = [
     {
       title: "CHOOSE EASY",
-      badge: "Major",
+      date: "Dec 2025",
       image: chooseEasyImg,
       goal: "Design a tool to help individuals explore career opportunities and make informed decisions without external influence.",
       techStack: "React.js, Node.js, MongoDB, Express, Socket.IO, Git",
       features: "Real-time interactions and personalized career path guidance tailored directly to user interests.",
       liveLink: "#",
-      githubLink: "https://github.com/Sanjays77"
+      githubLink: "https://github.com/Sanjays77/CHOOSEEASY"
     },
     {
       title: "Community Connect",
-      badge: "Major",
+      date: "Feb 2026",
       image: communityConnectImg,
       goal: "A centralized web platform designed to streamline daily operations for residential societies.",
       techStack: "React.js, Node.js, Express, Tailwind CSS, MongoDB",
       features: "Digital notice board, interactive real-time complaint tracking, and automated maintenance billing.",
-      liveLink: "#",
-      githubLink: "https://github.com/Sanjays77"
+      liveLink: "https://communityconnect-lake.vercel.app/",
+      githubLink: "https://github.com/Sanjays77/Community_Connect"
     },
     {
       title: "Music School Mgt",
-      badge: "Major",
+      date: "Apr 2025",
       image: musicSchoolImg,
       goal: "Digitize academic and administrative workflows covering student enrollment and lesson scheduling.",
       techStack: "HTML, Tailwind CSS, JavaScript, MySQL, PHP",
       features: "Secure roles, auto-scheduling, conflict resolution, teacher-student portals.",
       liveLink: "#",
-      githubLink: "https://github.com/Sanjays77"
+      githubLink: "https://github.com/Sanjays77/Music-School-Management"
     },
     {
       title: "CPU Scheduler Sim",
-      badge: "Major",
+      date: "Mar 2025",
       image: cpuSchedulerImg,
       goal: "Analyze CPU scheduling performance across various load conditions and algorithm constraints.",
       techStack: "C++, STL, MySQL, Git",
       features: "FCFS, SJF, Priority & Round Robin, ASCII Gantt Chart rendering.",
       liveLink: "#",
-      githubLink: "https://github.com/Sanjays77"
+      githubLink: "https://github.com/Sanjays77/Intelligent-CPU-Scheduler-Simulator"
     },
     {
       title: "Portfolio",
-      badge: "Major",
+      date: "Mar 2026",
       image: portfolioImg,
       goal: "Design and engineer a highly engaging, fully responsive personal portfolio to showcase featured works.",
       techStack: "React, Tailwind CSS, Vite, Lucide Icons",
       features: "Custom CSS animations, advanced 3D coverflow carousel, and modern neon aesthetic.",
       liveLink: "#",
-      githubLink: "https://github.com/Sanjays77"
+      githubLink: "https://github.com/Sanjays77/Portfolio"
     }
   ];
 
@@ -148,8 +148,8 @@ const Projects = () => {
                     {/* Title Row */}
                     <div className="flex items-center gap-3">
                       <h3 className="text-2xl font-bold text-[#a855f7]">{project.title}</h3>
-                      <span className="px-3 py-1 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-[10px] uppercase font-black tracking-widest rounded-full shadow-lg">
-                        {project.badge}
+                      <span className="px-3 py-1 bg-[#112240] border border-[#233554] text-[#8892b0] text-[10px] uppercase font-bold tracking-widest rounded-full shadow-lg">
+                        {project.date}
                       </span>
                     </div>
 
@@ -173,7 +173,7 @@ const Projects = () => {
 
                     {/* Bottom Links */}
                     <div className="flex gap-4 w-full mt-4">
-                      {project.title === "CHOOSE EASY" && (
+                      {project.liveLink && project.liveLink !== "#" && (
                         <a
                           href={project.liveLink}
                           target="_blank"
