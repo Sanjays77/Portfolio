@@ -206,7 +206,7 @@ const Contact = () => {
               
               <div className="flex flex-col space-y-2.5">
                 <label htmlFor="message" className="text-[#8892b0] text-[15px] font-semibold tracking-wide">
-                  Communiqué <span className="text-[#a855f7]">*</span>
+                  Message <span className="text-[#a855f7]">*</span>
                 </label>
                 <textarea 
                   id="message" 
@@ -232,7 +232,7 @@ const Contact = () => {
                   <span>
                     {status === 'submitting' ? 'Dispatching...' : 
                      status === 'success' ? 'Dispatched Successfully!' : 
-                     status === 'error' ? 'Failed to Dispatch' : 'Dispatch Communiqué'}
+                     status === 'error' ? 'Failed to Dispatch' : 'Dispatch Message'}
                   </span>
                   {status === 'success' ? <CheckCircle className="w-5 h-5" /> : 
                    status === 'error' ? <XCircle className="w-5 h-5" /> : 

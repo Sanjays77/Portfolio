@@ -89,7 +89,7 @@ const Navbar = () => {
           onClick={(e) => handleScrollTo(e, 'home')}
           className="text-3xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#a855f7] to-[#d8b4fe] hover:scale-105 transition-transform duration-300 origin-left cursor-pointer drop-shadow-lg"
         >
-          S.
+          <p>Sanjay</p>
         </a>
 
         {/* Desktop Navigation */}
