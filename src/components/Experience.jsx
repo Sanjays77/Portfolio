@@ -1,4 +1,5 @@
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import redHatCert from '../assets/certificates/red hat certificate .pdf';
 
 const Experience = () => {
   return (
@@ -44,7 +45,12 @@ const Experience = () => {
                     <h3 className="text-2xl font-bold text-[#ccd6f6] group-hover:text-white transition-colors">
                       Mastering Linux System Administration by RHCSA
                     </h3>
-                    <a href="#" className="inline-flex items-center text-sm font-medium text-[#facc15] hover:text-[#eab308] mt-3 group/link">
+                    <a 
+                      href={redHatCert} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="inline-flex items-center text-sm font-medium text-[#facc15] hover:text-[#eab308] mt-3 group/link"
+                    >
                       <ExternalLink className="w-4 h-4 mr-2 group-hover/link:translate-x-1 transition-transform" /> View Certificate Link
                     </a>
                   </div>
