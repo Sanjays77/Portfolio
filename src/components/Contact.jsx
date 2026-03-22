@@ -9,10 +9,12 @@ const Contact = () => {
     message: ''
   });
   const [status, setStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('submitting');
+    setErrorMessage('');
     
     try {
       const response = await fetch("https://formsubmit.co/ajax/sanjay28912005@gmail.com", {
@@ -27,7 +29,8 @@ const Contact = () => {
             subject: formData.subject,
             message: formData.message,
             _subject: `New Portfolio Message: ${formData.subject || 'Contact'} from ${formData.name}`,
-            _template: "table"
+            _template: "table",
+            _captcha: "false"
         })
       });
       
@@ -39,11 +42,13 @@ const Contact = () => {
         setTimeout(() => setStatus('idle'), 5000);
       } else {
         setStatus('error');
-        setTimeout(() => setStatus('idle'), 5000);
+        setErrorMessage(data.message || 'Dispatch failed. Please try again.');
+        setTimeout(() => setStatus('idle'), 10000);
       }
     } catch (error) {
       console.error(error);
       setStatus('error');
+      setErrorMessage('An error occurred. Please check your connection.');
       setTimeout(() => setStatus('idle'), 5000);
     }
   };
@@ -238,6 +243,15 @@ const Contact = () => {
                    status === 'error' ? <XCircle className="w-5 h-5" /> : 
                    <Send className={`w-5 h-5 ${status === 'submitting' ? 'animate-pulse text-[#d8b4fe]' : ''}`} />}
                 </button>
+                
+                {status === 'error' && errorMessage && (
+                  <div className="mt-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm animate-in fade-in slide-in-from-top-2 duration-300">
+                    <p className="flex items-center gap-2 font-medium">
+                      <XCircle className="w-4 h-4 shrink-0" />
+                      {errorMessage}
+                    </p>
+                  </div>
+                )}
               </div>
               
             </form>

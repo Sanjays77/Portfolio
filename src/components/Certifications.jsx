@@ -14,11 +14,25 @@ import iotInfosys from '../assets/certificates/IoT infosys certificate.pdf';
 import javaNeo from '../assets/certificates/Java Neocolab certificate.pdf';
 import udemyMasterGenAi from '../assets/certificates/Master generative AI Udemy.pdf';
 
-const CertificateThumbnail = ({ file }) => {
-  if (file && (file.endsWith('.png') || file.endsWith('.jpg') || file.endsWith('.jpeg'))) {
+// Screenshot Imports
+import cpScreenshot from '../assets/certificate images/Screenshot 2026-03-23 000402.png';
+import oopScreenshot from '../assets/certificate images/Screenshot 2026-03-23 000423.png';
+import javaScreenshot from '../assets/certificate images/Screenshot 2026-03-23 000528.png';
+import cloudScreenshot from '../assets/certificate images/Screenshot 2026-03-23 000547.png';
+import iotScreenshot from '../assets/certificate images/Screenshot 2026-03-23 000635.png';
+import automataScreenshot from '../assets/certificate images/Screenshot 2026-03-23 000651.png';
+import chatgptUdemyScreenshot from '../assets/certificate images/Screenshot 2026-03-23 000708.png';
+import genaiMasterScreenshot from '../assets/certificate images/Screenshot 2026-03-23 000745.png';
+import networkScreenshot from '../assets/certificate images/Screenshot 2026-03-23 000827.png';
+import tcpipScreenshot from '../assets/certificate images/Screenshot 2026-03-23 000843.png';
+import digitalSysScreenshot from '../assets/certificate images/Screenshot 2026-03-23 000904.png';
+
+const CertificateThumbnail = ({ file, thumbnail }) => {
+  const displayFile = thumbnail || file;
+  if (displayFile && (displayFile.endsWith('.png') || displayFile.endsWith('.jpg') || displayFile.endsWith('.jpeg') || displayFile.includes('data:image'))) {
     return (
-      <div className="w-[180px] h-[120px] flex items-center justify-center bg-white rounded-md shadow-md p-1">
-        <img src={file} alt="Certificate shadow" className="max-w-full max-h-full object-contain rounded-sm" />
+      <div className="w-[180px] h-[120px] flex items-center justify-center bg-white rounded-md shadow-md p-1 border border-gray-100">
+        <img src={displayFile} alt="Certificate Thumbnail" className="max-w-full max-h-full object-contain rounded-sm" />
       </div>
     );
   }
@@ -59,84 +73,96 @@ const Certifications = () => {
       issuer: "iamNEO",
       date: "16 May 2023",
       badges: ["Programming", "C Language"],
-      file: cNeo
+      file: cNeo,
+      thumbnail: cpScreenshot
     },
     {
       title: "Object Oriented Programming",
       issuer: "iamNEO",
       date: "5 DEC 2024",
       badges: ["Programming", "C++ Language"],
-      file: cppNeo
+      file: cppNeo,
+      thumbnail: oopScreenshot
     },
     {
       title: "Data Structures and Algorithms",
       issuer: "iamNEO",
       date: "5 DEC 2024",
       badges: ["Programming", "CPP & Java Language"],
-      file: javaNeo
+      file: javaNeo,
+      thumbnail: javaScreenshot
     },
     {
       title: "Introduction to Cloud Computing",
       issuer: "NPTEL",
       date: "March 2025",
       badges: ["Cloud", "AWS/GCP"],
-      file: nptelCloud
+      file: nptelCloud,
+      thumbnail: cloudScreenshot
     },
     {
       title: "Mastering in C :Basic to Beyond",
       issuer: "CSE Pathsala",
       date: "March 2024",
       badges: ["C Language", "Programming"],
-      file: csePathsala
+      file: csePathsala,
+      thumbnail: csePathsala
     },
     {
       title: "Internet of Things",
       issuer: "Infosys",
       date: "October 2023",
       badges: ["IoT", "Hardware"],
-      file: iotInfosys
+      file: iotInfosys,
+      thumbnail: iotScreenshot
     },
     {
       title: "Automata",
       issuer: "Infosys",
       date: "2023",
       badges: ["Automata", "Theory"],
-      file: automataInfosys
+      file: automataInfosys,
+      thumbnail: automataScreenshot
     },
     {
       title: "ChatGPT Prompt Engineering",
-      issuer: "Coursera",
+      issuer: "Udemy",
       date: "2024",
       badges: ["Generative AI", "Prompting"],
-      file: chatgptPrompt
+      file: chatgptPrompt,
+      thumbnail: chatgptUdemyScreenshot
     },
     {
       title: "Master Generative AI",
       issuer: "Udemy",
       date: "2024",
       badges: ["AI", "Advanced"],
-      file: udemyMasterGenAi
+      file: udemyMasterGenAi,
+      thumbnail: genaiMasterScreenshot
     },
     {
       title: "Fundamentals of Network",
       issuer: "Coursera",
       date: "2024",
       badges: ["Networking", "Basics"],
-      file: courseraNet
+      file: courseraNet,
+      thumbnail: networkScreenshot
     },
     {
       title: "TCP/IP Networks",
       issuer: "Coursera",
       date: "2024",
       badges: ["Networking", "TCP/IP"],
-      file: courseraTcp
+      file: courseraTcp,
+      thumbnail: tcpipScreenshot
     },
     {
       title: "Digital Systems",
       issuer: "Coursera",
       date: "2024",
       badges: ["Hardware", "Digital Logic"],
-      file: courseraDigital
+      file: courseraDigital,
+      thumbnail: digitalSysScreenshot
     }
   ];
 
@@ -177,7 +203,7 @@ const Certifications = () => {
 
               {/* Thumbnail */}
               <div className="mb-6 transform group-hover:-translate-y-1 transition-transform duration-300">
-                <CertificateThumbnail file={cert.file} />
+                <CertificateThumbnail file={cert.file} thumbnail={cert.thumbnail} />
               </div>
 
               {/* Details */}
