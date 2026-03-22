@@ -173,14 +173,16 @@ const Projects = () => {
 
                     {/* Bottom Links */}
                     <div className="flex gap-4 w-full mt-4">
-                      <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-bold rounded-lg text-center hover:opacity-90 transition-opacity shadow-[0_4px_14px_0_rgba(168,85,247,0.39)]"
-                      >
-                        Live Demo
-                      </a>
+                      {project.title === "CHOOSE EASY" && (
+                        <a
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-sm font-bold rounded-lg text-center hover:opacity-90 transition-opacity shadow-[0_4px_14px_0_rgba(168,85,247,0.39)]"
+                        >
+                          Live Demo
+                        </a>
+                      )}
                       <a
                         href={project.githubLink}
                         target="_blank"
