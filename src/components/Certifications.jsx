@@ -142,9 +142,9 @@ const Certifications = () => {
 
   const achievements = [
     {
-      title: "Solved 400+ Questions in LeetCode platform",
+      title: "Solved 200+ Questions in LeetCode platform",
       date: "Since August 2024",
-      link: "#" // Replace with actual LeetCode profile link
+      link: "https://leetcode.com/u/sanjays_777/" // Replace with actual LeetCode profile link
     }
   ];
 
